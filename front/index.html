@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://www.cps.sp.gov.br/favicon.ico" />
+  <title>Laboratório REST</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1 data-testid="page-title">Laboratório REST<span>.</span></h1>
+    <p>Envie uma requisição. Explore a resposta. Entenda a conversa.</p>
+  </header>
+  <main>
+    <section class="panel">
+      <div class="section-title"><span class="step">01</span>
+        <h2 id="request-title">Requisição</h2>
+      </div>
+      <label for="example">Operação</label><select id="example" data-testid="example"></select>
+      <p class="hint" id="example-hint"></p>
+      <form id="request-form">
+        <label for="base">Endereço base</label><input id="base" data-testid="base" type="url" required>
+        <div class="request-line">
+          <div><label for="method">Método</label><select id="method" data-testid="method" disabled>
+              <option>GET</option>
+              <option>POST</option>
+            </select></div>
+          <div><label for="path">Caminho do recurso</label><input id="path" data-testid="path" value="/api/students"
+              required></div>
+        </div>
+        <label for="body">Corpo da requisição · JSON</label><textarea id="body" data-testid="body" rows="7"
+          spellcheck="false"></textarea>
+        <p id="body-hint" class="hint">POST cria recursos. GET não envia corpo
+          neste laboratório.</p>
+        <button id="send" data-testid="send" type="submit">Enviar requisição →</button>
+      </form>
+      <h3 id="request-preview-title">Requisição preparada</h3>
+      <p class="hint">Método, URL e headers definidos por este cliente. O navegador pode acrescentar outros headers.</p>
+      <pre id="request-preview" data-testid="request-preview" role="region" tabindex="0"></pre>
+    </section>
+    <section id="response" data-testid="response" class="panel" aria-busy="false">
+      <div class="section-title"><span class="step">02</span>
+        <h2 id="response-title">Resposta</h2>
+      </div>
+      <div id="status" data-testid="status" class="status" role="status" data-state="idle">Aguardando a primeira
+        requisição</div>
+      <p id="response-meta" class="hint">Os resultados aparecerão aqui.</p>
+      <h3 id="response-headers-title">Headers da resposta</h3>
+      <p class="hint">Metadados HTTP: tipo de conteúdo, política de cache e informações do servidor.</p>
+      <pre id="response-headers" data-testid="response-headers" role="region" tabindex="0">—</pre>
+      <h3 id="response-body-title">Corpo da resposta</h3>
+      <pre id="response-body" data-testid="response-body" role="region"
+        tabindex="0">Envie um dos exemplos ao lado para começar.</pre>
+    </section>
+  </main>
+</body>
+
+</html>

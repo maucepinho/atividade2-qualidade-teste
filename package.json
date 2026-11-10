@@ -1,0 +1,19 @@
+{
+  "name": "atividade2-qualidade-teste",
+  "private": true,
+  "scripts": {
+    "test": "npm run test:e2e",
+    "test:e2e": "node e2e-atividade/run.cjs",
+    "test:e2e:list": "playwright test --config=playwright.atividade.config.ts --list --reporter=list",
+    "test:e2e:typecheck": "tsc -p e2e-atividade/tsconfig.json",
+    "test:e2e:report": "playwright show-report playwright-report/atividade --host 127.0.0.1 --port 0",
+    "test:laboratorio": "node e2e/run.cjs",
+    "test:laboratorio:list": "playwright test --config=playwright.config.ts --list --reporter=list",
+    "test:laboratorio:typecheck": "tsc -p e2e/tsconfig.json"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+coverage/
+.npm-cache/
+playwright-report/
+test-results/
+e2e-artifacts/
+tmp/
+.env
+.playwright-browsers/
+
